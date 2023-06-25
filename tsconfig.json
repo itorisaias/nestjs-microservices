@@ -17,6 +17,19 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@app/commands": [
+        "libs/commands/src"
+      ],
+      "@app/commands/*": [
+        "libs/commands/src/*"
+      ],
+      "@app/azure-service-bus": [
+        "libs/azure-service-bus/src"
+      ],
+      "@app/azure-service-bus/*": [
+        "libs/azure-service-bus/src/*"
+      ]
+    }
   }
 }

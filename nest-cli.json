@@ -1,24 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nestjs-microservices/src",
+  "sourceRoot": "apps/module-a/src",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/nestjs-microservices/tsconfig.app.json"
+    "tsConfigPath": "apps/module-a/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/nestjs-microservices",
+  "root": "apps/module-a",
   "projects": {
-    "nestjs-microservices": {
-      "type": "application",
-      "root": "apps/nestjs-microservices",
-      "entryFile": "main",
-      "sourceRoot": "apps/nestjs-microservices/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/nestjs-microservices/tsconfig.app.json"
-      }
-    },
     "module-a": {
       "type": "application",
       "root": "apps/module-a",
@@ -35,6 +26,24 @@
       "sourceRoot": "apps/module-b/src",
       "compilerOptions": {
         "tsConfigPath": "apps/module-b/tsconfig.app.json"
+      }
+    },
+    "commands": {
+      "type": "library",
+      "root": "libs/commands",
+      "entryFile": "index",
+      "sourceRoot": "libs/commands/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/commands/tsconfig.lib.json"
+      }
+    },
+    "azure-service-bus": {
+      "type": "library",
+      "root": "libs/azure-service-bus",
+      "entryFile": "index",
+      "sourceRoot": "libs/azure-service-bus/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/azure-service-bus/tsconfig.lib.json"
       }
     }
   }
