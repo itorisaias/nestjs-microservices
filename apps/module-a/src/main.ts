@@ -2,7 +2,11 @@ import { NestFactory, Reflector } from '@nestjs/core';
 import { ModuleAModule } from './module-a.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
+import {
+  ClassSerializerInterceptor,
+  HttpStatus,
+  ValidationPipe,
+} from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(ModuleAModule);
@@ -27,12 +31,12 @@ async function bootstrap() {
       transform: true,
       whitelist: true,
       forbidNonWhitelisted: true,
-      errorHttpStatusCode: 422,
+      errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
     }),
   );
   app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 
   await app.startAllMicroservices();
-  await app.listen(3001);
+  await app.listen(8080);
 }
 bootstrap();

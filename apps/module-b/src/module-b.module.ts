@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ModuleBController } from './module-b.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         },
       },
     ]),
+    PrismaModule,
   ],
   controllers: [ModuleBController],
 })

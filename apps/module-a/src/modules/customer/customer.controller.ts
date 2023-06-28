@@ -8,6 +8,7 @@ import {
   SignUpService,
 } from './services';
 import { randomUUID } from 'crypto';
+import { CommandPattern, Commands } from '@app/commands';
 
 @Controller('customer')
 export class CustomerController {
@@ -21,7 +22,7 @@ export class CustomerController {
   ) {}
 
   @Post('sign-in')
-  @MessagePattern({ cmd: 'sign-in' })
+  @MessagePattern<CommandPattern>({ cmd: Commands.CUSTOMER_SIGN_IN })
   signIn(@Body() payload: SignInDto) {
     this.logger.debug(payload);
 

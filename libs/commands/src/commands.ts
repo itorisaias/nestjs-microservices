@@ -1,7 +1,5 @@
 export enum Commands {
-  HELLO = 'hello',
-  BYE = 'bye',
-  GOOD_AFTERNOON = 'good_afternoon',
+  CUSTOMER_SIGN_IN = 'CUSTOMER_SIGN_IN',
 }
 
 export type CommandPattern = {
