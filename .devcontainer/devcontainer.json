@@ -31,7 +31,8 @@
 				"prisma.prisma",
 				"humao.rest-client",
 				"esbenp.prettier-vscode",
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"editorconfig.editorconfig"
 			]
 		}
 	}

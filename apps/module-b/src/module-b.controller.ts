@@ -1,33 +1,33 @@
 import { Commands } from '@app/commands';
-import { Controller, Get, Inject, Query } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
+import { randomUUID } from 'crypto';
 import { firstValueFrom } from 'rxjs';
 
-type SendResult = string;
-type SendInput = string;
+type SendInput = {
+  email: string;
+  password: string;
+};
+type SendResult = SendInput & {
+  id: string;
+};
 
 @Controller()
 export class ModuleBController {
   constructor(
-    @Inject('MODULE_A')
-    private tcpClient: ClientProxy,
+    @Inject('CUSTOMER_SERVICE')
+    private customerService: ClientProxy,
   ) {}
 
   @Get()
-  async getHello(@Query('name') name = 'anonymous') {
-    try {
-      console.log('trigger B');
-      const result = await firstValueFrom(
-        this.tcpClient.send<SendResult, SendInput>(
-          { cmd: Commands.HELLO },
-          name,
-        ),
-      );
-      console.log('wait  result');
+  async signInCustomer() {
+    const request = this.customerService.send<SendResult, SendInput>(
+      { cmd: Commands.CUSTOMER_SIGN_IN },
+      { email: 'itor.isaias@gmail.com', password: randomUUID() },
+    );
 
-      return result;
-    } catch (error) {
-      return 'deu merda';
-    }
+    const response = await firstValueFrom(request);
+
+    return response;
   }
 }

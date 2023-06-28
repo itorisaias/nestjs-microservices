@@ -7,9 +7,10 @@ import {
   SignInService,
   SignUpService,
 } from './services';
-import { randomUUID } from 'crypto';
 import { CommandPattern, Commands } from '@app/commands';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('customer')
 @Controller('customer')
 export class CustomerController {
   private logger = new Logger(CustomerController.name);
@@ -24,19 +25,12 @@ export class CustomerController {
   @Post('sign-in')
   @MessagePattern<CommandPattern>({ cmd: Commands.CUSTOMER_SIGN_IN })
   signIn(@Body() payload: SignInDto) {
-    this.logger.debug(payload);
-
-    return {
-      id: randomUUID(),
-      ...payload,
-    };
+    return this.signInService.execute(payload);
   }
 
   @Post('sign-up')
   signUp(@Body() payload: SignUpDto) {
-    this.logger.debug(payload);
-
-    return 'sign-up';
+    return this.signUpService.execute(payload);
   }
 
   @Post('confirm-email')

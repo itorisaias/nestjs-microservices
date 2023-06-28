@@ -1,11 +1,11 @@
 import { Commands } from '@app/commands';
 import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { InjectMetric } from '@willsoto/nestjs-prometheus';
+import { ApiTags } from '@nestjs/swagger';
 import { randomUUID } from 'crypto';
-import { Counter, Gauge } from 'prom-client';
 import { firstValueFrom } from 'rxjs';
 
+@ApiTags('integrations')
 @Controller('integrations')
 export class IntegrationsController {
   constructor(

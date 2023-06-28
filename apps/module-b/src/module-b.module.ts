@@ -7,7 +7,7 @@ import { PrismaModule } from './prisma/prisma.module';
   imports: [
     ClientsModule.register([
       {
-        name: 'MODULE_A',
+        name: 'CUSTOMER_SERVICE',
         transport: Transport.TCP,
         options: {
           host: '0.0.0.0',
