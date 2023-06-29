@@ -1,12 +1,19 @@
+import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
-import { CustomerController } from './customer.controller';
-import { SignUpService } from './services/sign-up/sign-up.service';
-import { SignInService } from './services/sign-in/sign-in.service';
-import { ConfirmEmailService } from './services/confirm-email/confirm-email.service';
-import { ResetPasswordService } from './services/reset-password/reset-password.service';
 import { makeCounterProvider } from '@willsoto/nestjs-prometheus';
 
+import { CustomerController } from './customer.controller';
+import { ConfirmEmailService } from './services/confirm-email/confirm-email.service';
+import { ResetPasswordService } from './services/reset-password/reset-password.service';
+import { SignInService } from './services/sign-in/sign-in.service';
+import { SignUpService } from './services/sign-up/sign-up.service';
+
 @Module({
+  imports: [
+    BullModule.registerQueue({
+      name: 'customer',
+    }),
+  ],
   controllers: [CustomerController],
   providers: [
     SignUpService,

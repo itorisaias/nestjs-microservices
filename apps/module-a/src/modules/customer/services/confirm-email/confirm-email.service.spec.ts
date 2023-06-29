@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { ConfirmEmailService } from './confirm-email.service';
 
 describe('ConfirmEmailService', () => {

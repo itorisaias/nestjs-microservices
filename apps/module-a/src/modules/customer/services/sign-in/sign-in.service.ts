@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectMetric } from '@willsoto/nestjs-prometheus';
-import { PrismaService } from 'apps/module-a/src/prisma/prisma.service';
+import { PrismaService } from 'apps/module-a/src/infra/prisma/prisma.service';
 import { Counter } from 'prom-client';
 
 @Injectable()

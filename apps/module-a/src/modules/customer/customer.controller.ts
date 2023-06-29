@@ -1,14 +1,15 @@
+import { CommandPattern, Commands } from '@app/commands';
 import { Body, Controller, Logger, Post } from '@nestjs/common';
-import { ConfirmEmailDto, ResetPasswordDto, SignInDto, SignUpDto } from './dto';
 import { MessagePattern } from '@nestjs/microservices';
+import { ApiTags } from '@nestjs/swagger';
+
+import { ConfirmEmailDto, ResetPasswordDto, SignInDto, SignUpDto } from './dto';
 import {
   ConfirmEmailService,
   ResetPasswordService,
   SignInService,
   SignUpService,
 } from './services';
-import { CommandPattern, Commands } from '@app/commands';
-import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('customer')
 @Controller('customer')

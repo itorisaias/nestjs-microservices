@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
-import { IntegrationsController } from './integrations.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+
+import { IntegrationsController } from './integrations.controller';
 
 @Module({
   imports: [

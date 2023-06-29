@@ -1,7 +1,11 @@
 global:
   scrape_interval: 5s
 scrape_configs:
-  - job_name: "app"
+  - job_name: "module-a"
     scrape_interval: 5s
     static_configs:
       - targets: ["app:8080"]
+  - job_name: "module-b"
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["app:8082"]
