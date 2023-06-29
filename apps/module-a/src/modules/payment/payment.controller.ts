@@ -7,6 +7,6 @@ export class PaymentController {
 
   @Cron(CronExpression.EVERY_MINUTE)
   checkPaymentsNotProcessed() {
-    this.logger.debug('check payment not processed every minute!');
+    this.logger.debug('check payment not processed every minute');
   }
 }
