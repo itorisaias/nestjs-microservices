@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/itorisaias/nestjs-microservices/compare/v1.3.0...v1.3.1) (2023-06-30)
+
+
+### Bug Fixes
+
+* **devcontainer:** update plugins list ([982e09c](https://github.com/itorisaias/nestjs-microservices/commit/982e09c4ede2f2364db2783f0f52830ff6886306))
+
 # [1.3.0](https://github.com/itorisaias/nestjs-microservices/compare/v1.2.0...v1.3.0) (2023-06-29)
 
 
