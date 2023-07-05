@@ -20,7 +20,6 @@ export class IntegrationsController {
       {
         email: randomUUID().concat('@gmail.com'),
         password: randomUUID(),
-        name: randomUUID(),
       },
     );
 

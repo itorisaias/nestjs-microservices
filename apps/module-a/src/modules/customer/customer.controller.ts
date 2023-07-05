@@ -30,6 +30,7 @@ export class CustomerController {
   }
 
   @Post('sign-up')
+  @MessagePattern<CommandPattern>({ cmd: Commands.CUSTOMER_SIGN_UP })
   signUp(@Body() payload: SignUpDto) {
     return this.signUpService.execute(payload);
   }

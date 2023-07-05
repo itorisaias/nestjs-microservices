@@ -35,10 +35,10 @@ export class SignUpService {
         },
       });
 
-      await this.customerCreatedQueue.add('created', {
-        email: newUser.email,
-        customer_id: newUser.id,
-      });
+      // await this.customerCreatedQueue.add('created', {
+      //   email: newUser.email,
+      //   customer_id: newUser.id,
+      // });
 
       this.logger.debug(newUser);
 

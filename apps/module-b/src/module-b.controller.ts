@@ -1,5 +1,5 @@
 import { Commands } from '@app/commands';
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Controller, Get, Inject, Logger } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { randomUUID } from 'crypto';
 import { firstValueFrom } from 'rxjs';
@@ -14,6 +14,8 @@ type SendResult = SendInput & {
 
 @Controller()
 export class ModuleBController {
+  private readonly logger = new Logger(ModuleBController.name);
+
   constructor(
     @Inject('CUSTOMER_SERVICE')
     private customerService: ClientProxy,

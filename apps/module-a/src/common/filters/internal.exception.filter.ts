@@ -11,6 +11,8 @@ export class InternalExceptionFilter implements ExceptionFilter {
     const context = host.switchToHttp();
     const response = context.getResponse<Response>();
 
+    this.logger.debug(exception);
+
     return response.status(exception.code).json({
       message: exception.message,
       code: exception.code,
