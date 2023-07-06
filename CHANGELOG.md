@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/itorisaias/nestjs-microservices/compare/v1.3.1...v1.4.0) (2023-07-06)
+
+
+### Features
+
+* **contracts:** add types ([ef00d69](https://github.com/itorisaias/nestjs-microservices/commit/ef00d69f15f2598aa7556ee5882503f6a743bbc2))
+
 ## [1.3.1](https://github.com/itorisaias/nestjs-microservices/compare/v1.3.0...v1.3.1) (2023-06-30)
 
 
