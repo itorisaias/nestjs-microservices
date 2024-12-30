@@ -25,7 +25,7 @@ export class ModuleBController {
   async signInCustomer() {
     const request = this.customerService.send<SendResult, SendInput>(
       { cmd: Commands.CUSTOMER_SIGN_IN },
-      { email: 'itor.isaias@gmail.com', password: randomUUID() },
+      { email: 'itor1.isaias@gmail.com', password: randomUUID() },
     );
 
     const response = await firstValueFrom(request);
