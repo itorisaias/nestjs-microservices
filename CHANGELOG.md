@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/itorisaias/nestjs-microservices/compare/v1.4.0...v2.0.0) (2024-12-30)
+
+
+### Features
+
+* **module-b:** upadte controller ([fc3fba3](https://github.com/itorisaias/nestjs-microservices/commit/fc3fba36df5471c995495475ab35ec1b78d1662d)), closes [#1](https://github.com/itorisaias/nestjs-microservices/issues/1)
+
+
+### BREAKING CHANGES
+
+* **module-b:** sign-in
+
 # [1.4.0](https://github.com/itorisaias/nestjs-microservices/compare/v1.3.1...v1.4.0) (2023-07-06)
 
 
